@@ -1,5 +1,5 @@
 # Kubo
-A New Repository for learnning new technologies.
+A Repository for learnning new technologies.
 
 # MEAN STACK 
 
