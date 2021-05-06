@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Tutorial } from '../models/tutorial.model';
 
 const baseUrl = 'http://localhost:8080/api/tutorials';
 
@@ -11,11 +12,11 @@ export class TutorialService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any[]> {
+  getAll(): Observable<Tutorial[]> {
     return this.http.get<any[]>(baseUrl);
   }
 
-  get(id: any): Observable<any> {
+  get(id: any): Observable<Tutorial> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -35,7 +36,7 @@ export class TutorialService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<any[]> {
+  findByTitle(title: any): Observable<Tutorial[]> {
     return this.http.get<any[]>(`${baseUrl}?title=${title}`);
   }
 
